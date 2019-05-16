@@ -1,4 +1,4 @@
-wiki_tokened.bin/
-wiki_data.txt/
+wiki_tokened.bin
+wiki_data.txt
 __pycache__/
 .ipynb_checkpoints/
