@@ -13,7 +13,7 @@ def strip_e(st):
     RE_EMOJI = re.compile('[\U00010000-\U0010ffff]', flags=re.UNICODE)
     return RE_EMOJI.sub(r'', st)
 
-if __name__=='__main__':
+def main():
 
     okt = Okt()
 
@@ -93,17 +93,5 @@ if __name__=='__main__':
     print ()
 
 
-    
-
-
-      
-	    
-    
-   
-
-
-
-
-
-
-                  
+if __name__ == '__main__':
+    main()
