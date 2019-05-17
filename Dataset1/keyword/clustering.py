@@ -1,10 +1,12 @@
-    from gensim.models import Word2Vec
-    #sklearn things--------------------------------------
-    from sklearn import cluster
-    from sklearn import metrics
-    from nltk.cluster import KMeansClusterer
-    import nltk
-    #--------------------------------------------------------------------
+from gensim.models import Word2Vec
+#sklearn things--------------------------------------
+from sklearn import cluster
+from sklearn import metrics
+from nltk.cluster import KMeansClusterer
+import nltk
+#--------------------------------------------------------------------
+def main():
+    
     NUM_CLUSTERS = 3
     
     model = Word2Vec.load("test_word2vec_1.model")
@@ -34,5 +36,3 @@
     print("Centroids data")
     print(centroids)
     #-------------------------------------------------------------------------------------------
-    
-    
