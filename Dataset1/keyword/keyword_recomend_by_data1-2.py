@@ -1,42 +1,52 @@
 import pickle
-
 from collections import Counter
 
-keyword_num =2
+#------------------------------------------------
 
-def search_key(count_list, freq_data, loop):
-    keep = []
-    freq  = []
-    key = []
-    keyword = []
-    count = 0
-    i = 0
+# 한 게시글 당 뽑을 키워드의 갯수
+keyword_num =2 
+
+# keyword 찾는 함수
+
+# count_list = data1-1의 게시글 하나를 저장한 counter
+# freq_data = data1-2
+# loop = search_key 반복 제어 변수
+def search_key(count_list, freq_data, loop): 
     
+    keep = [] # 게시글 내에서 가장 높은 빈도로 등장하는 명사를 저장하는 list
+    freq  = [] # data1-2를 통해 keep에 있는 명사들이 전체 게시글에서 등장하는 빈도를 저장하는 list
+    key = [] # 게시글 하나의 keyword 리스트
+    keyword = [] # keyword 리스트
+    count = 0 # 게시글 내에 가장 높은 빈도를 가진 명사의 수
+    i = 0 # 반복문 제어 변수
+    
+    # 키워드를 다 뽑았거나 게시글의 단어가 더 없다면 종료
     if (loop >= keyword_num) | (len(count_list) == 0) :
         return 0
-    word = list(count_list)
-    max_freq = count_list.most_common(1)[0][1]
+    
+    word = list(count_list) #count_list에서 명사들을 list로 만듦
+    max_freq = count_list.most_common(1)[0][1] # 한 게시글 내에서 가장 많이 등장한 단어의 빈도
     while i < len(word) :
-        if  max_freq == count_list[word[i]] :
+        if  max_freq == count_list[word[i]] : # word[i]가 가장 많이 등장했다면
             keep.append(word[i])
-            del count_list[word[i]] 
+            del count_list[word[i]] # count_list에서 word[i] 삭제 
             count = count + 1
         i= i+1
-    if count > keyword_num - loop :
+    if count > keyword_num - loop : # 게시글 내에서 가장 많이 등장한 단어가 뽑아야할 키워드의 수보다 많을 경우
         for m in keep :
-            freq.append(freq_data[m])
+            freq.append(freq_data[m]) 
         for v in range(0, keyword_num - loop) :
-            index = freq.index(max(freq))
+            index = freq.index(max(freq)) # 전체 게시글에서 가장 많이 등장한 단어의 index를 뽑는다
             del freq[index]
-            key.append(keep.pop(index))
+            key.append(keep.pop(index)) # 전체 게시글에서 가장 많이 등장한 단어를 keyword로 선정한다
         keyword.append(key)
-    elif count == keyword_num - loop :
+    elif count == keyword_num - loop : # 게시글 내에서 가장 많이 등장한 단어가 뽑아야할 키워드의 수와 같을 경우
         keyword.append(keep)
-    elif count < keyword_num - loop :
+    elif count < keyword_num - loop : # 게시글 내에서 가장 많이 등장한 단어가 뽑아야할 키워드의 수보다 적을 경우
         keyword.append(keep)
-        search_error = search_key(count_list, freq_data, loop + count)
-        if(type(search_error) == type(keyword)) :
-            keyword.extend(search_error)
+        search_error = search_key(count_list, freq_data, loop + count) # 더 키워드를 뽑는다.
+        if(type(search_error) == type(keyword)) : # return값이 list가 아니면
+            keyword.extend(search_error) # keyword에 추가하지 않는다.
     
     return keyword
         
