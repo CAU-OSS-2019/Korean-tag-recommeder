@@ -39,14 +39,14 @@ def search_key(count_list, freq_data, loop):
             index = freq.index(max(freq)) # 전체 게시글에서 가장 많이 등장한 단어의 index를 뽑는다
             del freq[index]
             key.append(keep.pop(index)) # 전체 게시글에서 가장 많이 등장한 단어를 keyword로 선정한다
-        keyword.append(key)
+        keyword.extend(key) #append => extend로(변경)
     elif count == keyword_num - loop : # 게시글 내에서 가장 많이 등장한 단어가 뽑아야할 키워드의 수와 같을 경우
-        keyword.append(keep)
+        keyword.extend(keep) #append => extend로(변경)
     elif count < keyword_num - loop : # 게시글 내에서 가장 많이 등장한 단어가 뽑아야할 키워드의 수보다 적을 경우
-        keyword.append(keep)
         search_error = search_key(count_list, freq_data, loop + count) # 더 키워드를 뽑는다.
         if(type(search_error) == type(keyword)) : # return값이 list가 아니면
-            keyword.extend(search_error) # keyword에 추가하지 않는다.
+            keep.extend(search_error) # keep에 추가하지 않는다. #keyword => keep으로 (변경)
+        keyword.extend(keep) #append => extend로 & 위치 바꿈 (변경)           
     
     return keyword
         
