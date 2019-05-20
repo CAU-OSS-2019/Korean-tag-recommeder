@@ -29,6 +29,8 @@ output:
 <br>  
 
 ## Manual  
+
+### Environment configuration  
 Run in your terminal (recommended):  
 
     pip install --upgrade gensim
@@ -36,3 +38,28 @@ Run in your terminal (recommended):
 or, alternatively for conda environments:  
 
     conda install -c conda-forge gensim
+
+<br>
+
+For preprocessing of data:
+
+    pip install --upgrade pip
+    conda -c conda-forge install jpype1
+
+    pip install konlpy
+
+### Testing
+
+    Testmodel.py
+
+<br>
+
+For more instructions of preprocess/making model please see WIKI(링크)  
+<br>
+
+
+## Contribute  
+Before Contribution, please read HERE 
+
+
+
