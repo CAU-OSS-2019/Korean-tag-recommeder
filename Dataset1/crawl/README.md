@@ -1,7 +1,5 @@
 # Instagram Hashtag Crawler
-This crawler was made because most of the crawlers out there seems to either require a browser or a developer account. This Instagram crawler utilizes a private API of Instagram and thus no developer account is required.
-
-Refer to a similar script I wrote. It might be more helpful in terms of documentation: [simonseo/instacrawler-privateapi](https://github.com/simonseo/instagram-hashtag-crawler)
+This crawler let you crawl post searching data by hashtags. It utilizes a private API of Instagram and thus no developer account is required.
 
 ## Installation
 First install [Instagram Private API](https://github.com/ping/instagram_private_api). Kudos for a great project!
@@ -12,7 +10,7 @@ $ pip install git+https://github.com/ping/instagram_private_api.git
 Now run `__init__.py`. It'll provide you with the command options. If this shows up, everything probably works
 ```
 $ python __init__.py
-usage: __init__.py [-h] -u USERNAME -p PASSWORD [-f TARGETFILE] [-t TARGET]
+usage: __init__.py [-h] -u USERNAME -p PASSWORD [-t TARGET]
 ```
 
 ## Get Crawlin'
