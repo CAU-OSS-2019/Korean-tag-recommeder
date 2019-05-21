@@ -13,7 +13,7 @@ while(True):
 		word = input('\nwords: ')
 		if word == 'q':
 			break
-		result = test_model.wv.most_similar(word)		
+		result = test_model.wv.most_similar(word, topn=30)		
 	except KeyError as e:
 		print(e)
 		continue
