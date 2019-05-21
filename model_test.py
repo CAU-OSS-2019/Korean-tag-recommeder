@@ -2,7 +2,7 @@
 
 from gensim.models import Word2Vec
 
-model_name = 'Model1_word2vec.model'
+model_name = 'Model2_word2vec.model'
 test_model = Word2Vec.load(model_name)
 print("\n***If you want stop, input \'q\'***")
 #word = input('words: ')
@@ -13,7 +13,9 @@ while(True):
 		word = input('\nwords: ')
 		if word == 'q':
 			break
-		result = test_model.wv.most_similar(word, topn=30)		
+		if word.find('#') == -1:
+			continue
+		result = test_model.wv.most_similar(word)
 	except KeyError as e:
 		print(e)
 		continue
