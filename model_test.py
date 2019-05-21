@@ -2,7 +2,8 @@
 
 from gensim.models import Word2Vec
 
-model_name = 'Model2_word2vec.model'
+
+model_name = input('Write model name: ')
 test_model = Word2Vec.load(model_name)
 print("\n***If you want stop, input \'q\'***")
 #word = input('words: ')
