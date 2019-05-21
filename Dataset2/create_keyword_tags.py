@@ -7,7 +7,7 @@ def main():
     with open('keyword.bin', 'rb') as f:
         data = pickle.load(f)
         
-    with open('./data1&2/data_2.bin', 'rb') as f2:
+    with open('../Dataset1/insta_tags.bin', 'rb') as f2:
         tag = pickle.load(f2)
     
     data2 = [];
@@ -16,7 +16,7 @@ def main():
         data2.append(data[i] + tag[i])
     
     # 결과 리스트 저장
-    save_dir = 'new_data2.bin'  # 저장 경로
+    save_dir = 'keyword_tags.bin'  # 저장 경로
     with open(save_dir, 'wb') as fwrite:
         pickle.dump(data2, fwrite)
 

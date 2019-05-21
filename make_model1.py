@@ -5,7 +5,7 @@ import time
 def main():
     
     # 데이터셋 불러옴
-    with open('./Dataset1/insta_data1-1.bin', 'rb') as f:
+    with open('./Dataset1/insta_noun.bin', 'rb') as f:
         data1 = pickle.load(f)
     with open('./Dataset1/wiki_tokened.bin', 'rb') as f2:
         data2 = pickle.load(f2)

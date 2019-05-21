@@ -53,10 +53,10 @@ def search_key(count_list, freq_data, loop):
 
 def main():
     
-    with open('./opensource/0.2million/Data_1-1.bin', 'rb') as f:
+    with open('../Dataset1/insta_noun.bin', 'rb') as f:
         letter_data = pickle.load(f)
         
-    with open('./opensource/0.2million/Data_1-2.bin', 'rb') as f2:
+    with open('../Dataset1/insta_counted.bin', 'rb') as f2:
         freq_data = pickle.load(f2)
 
     keyword = []
