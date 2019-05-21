@@ -3,7 +3,7 @@
 import re
 import json
 
-with open('data5.txt') as f:
+with open('data5.txt') as f: #data.txt data2.txt data3.txt data4.txt data5.txt에 대하여 모두 
     line_num=1
     line = f.readline()
     while line:
