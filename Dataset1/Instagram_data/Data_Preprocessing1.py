@@ -1,4 +1,4 @@
-#원본파일을 5등분 해서 #필카 들어있는 게시물만 뽑음data.txt data2.txt data3.txt data4.txt data5.txt
+#원본파일을 5등분 해서 #필카 들어있는 게시물만 뽑아서 각각 data.txt data2.txt data3.txt data4.txt data5.txt에 씀
 import re
 import json
 
