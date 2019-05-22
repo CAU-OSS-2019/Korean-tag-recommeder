@@ -83,6 +83,6 @@ For more instructions of PREPROCESSING/MODELING, please read [WIKI](https://gith
 <br>
 
 # Contribution  
-If you want to contribute on our project, please read [Contribution Guide]() before Contributing.  
+If you want to contribute on our project, please read [Contribution Guide](https://github.com/CAU-OSS-2019/team-project-team18/blob/master/Contribution_Guide.md) before Contributing.  
 
 <br>
