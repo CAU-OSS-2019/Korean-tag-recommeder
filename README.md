@@ -1,11 +1,12 @@
 # Korean-tag-recommeder  
 
-A prototype of the program recommend the appropriate KOREAN HASHTAGS depending on Instagram body. 
-Recommend word hashtags that are popular but not appearing in the text for the text related to '필카', using Word2Vec model  
+A prototype of the program recommend the appropriate KOREAN HASHTAGS depending on Instagram body  
+Recommend word hashtags that are popular  
+but not appearing in the text for the text related to '필카', using Word2Vec model.  
 <br>
-인스타그램에 업로드할 본문을 입력하면, 해당 본문에 적절한 한글 해쉬태그를 추천하는 프로그램입니다.
-이 프로그램은 prototype으로, '필카'에 관련된 본문에 대한 태그만을 추천합니다.
-인기가 많으면서도 본문에 등장하지 않는 단어를 태그로 추천합니다.
+인스타그램에 업로드할 본문을 입력하면, 해당 본문에 적절한 한글 해쉬태그를 추천하는 프로그램입니다.  
+이 프로그램은 prototype으로, '필카'에 관련된 본문에 대한 태그만을 추천합니다.  
+인기가 많으면서도 본문에 등장하지 않는 단어를 태그로 추천합니다.  
 
 \* '필카' means short for film camera.  
 \* 'Instagram body' means Instagram post without hashtags.  
@@ -22,8 +23,9 @@ output:
 
 <br>
 
-## What Does This Repo Contain  
-!!워크플로우사진!!  
+## What Does This Repository Contain  
+
+![Workflow](https://github.com/CAU-OSS-2019/team-project-team18/blob/master/Modeling%20Workflow.jpg)
 
 * `Dataset1/` data for Model 1  
   * `kowiki_data_tokenizing.py' Tokenize Korean Wiki text file  
