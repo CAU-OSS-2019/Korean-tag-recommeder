@@ -1,7 +1,7 @@
 # Korean-tag-recommeder  
 
-A prototype of the program recommend the appropriate KOREAN HASHTAGS depending on Instagram body  
-Recommend word hashtags that are popular but not appearing in the text, using Word2Vec model.  
+A prototype program that recommends appropriate KOREAN HASHTAGS depending on Instagram body  
+Recommend word hashtags that are popular but not appearing in the post, using Word2Vec model.  
 <br>
 인스타그램에 업로드할 본문을 입력하면, 해당 본문에 적절한 한글 해쉬태그를 추천하는 프로그램입니다.  
 Word2Vec을 이용한 모델로 많이 사용되면서도 본문에 등장하지 않는 단어를 태그로 추천합니다.  
@@ -31,7 +31,7 @@ output:
 
 <br>
 
-# What Does This Repository Contain  
+# What This Repository Contains  
 
 ![Workflow](https://github.com/CAU-OSS-2019/team-project-team18/blob/master/Modeling%20Workflow.jpg)
 
@@ -79,10 +79,10 @@ For preprocessing of data, you need to install KoNLPy:
 
 <br>
 
-For more instructions of PREPROCESSING/MODELING, please see [WIKI](https://github.com/CAU-OSS-2019/team-project-team18/wiki)  
+For more instructions of PREPROCESSING/MODELING, please read [WIKI](https://github.com/CAU-OSS-2019/team-project-team18/wiki)  
 <br>
 
 # Contribution  
-If you want contribute our project, please read [Contribution Guide]() before Contribution.  
+If you want to contribute on our project, please read [Contribution Guide]() before Contributing.  
 
 <br>
