@@ -23,14 +23,19 @@ output:
 <br>
 
 ## What Does This Repo Contain  
+!!워크플로우사진!!  
 
-* `Dataset1/` data for Model 1
-* `Dataset2/` data for Model 2
-* `Model1_word2vec.model` Model 1 for recommending WORDS similar to the keywords
-* `Model2_word2vec.model` Model 2 for recommending TAGS related to keywords
-* `make_model1.py` Make Model 1
-* `make_model2.py` Make Model 2
-* `model_test.py` Check the results of the model created
+* `Dataset1/` data for Model 1  
+  * `kowiki_data_tokenizing.py' Tokenize Korean Wiki text file  
+* `Dataset2/` data for Model 2  
+  * `keyword_recomend_by_counted.py` Choose keyword from `insta_noun.bin` by `insta_counted.bin'
+  * `create_keyword_tags.py` create `keyword_tags.bin` for Model 2  
+
+* `Model1_word2vec.model` Model 1 for recommending WORDS similar to the keywords  
+* `Model2_word2vec.model` Model 2 for recommending TAGS related to keywords  
+* `make_model1.py` Make Model 1  
+* `make_model2.py` Make Model 2  
+* `model_test.py` Check the results of the model created  
 
 
 
@@ -58,9 +63,10 @@ For preprocessing of data, you need to install KoNLPy:
 
 ### Testing
 
-    Testmodel.py
+    Testmodel.py #교체예정!!
 
 <br>
 
-For more instructions of preprocess/making model please see WIKI(링크)  
+For more instructions of PREPROCESSING/MODELING, please see [WIKI](https://github.com/CAU-OSS-2019/team-project-team18/wiki)
+
 <br>
