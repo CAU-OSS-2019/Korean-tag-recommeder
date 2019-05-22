@@ -32,13 +32,13 @@ with open('test.txt') as f:
             totalPostList.append(resultList)
 
 
-    with open('data_1.bin.bin','wb') as f2:
+    with open('insta_noun.bin','wb') as f2:
         pickle.dump(totalPostList, f2)
 
 
     
-print ('Data_2:')
-with open('data_1.bin.bin', 'rb') as f:
+print ('insta_noun:')
+with open('insta_noun.bin', 'rb') as f:
     data = pickle.load(f)
 print (data[:20])   
 print ()
