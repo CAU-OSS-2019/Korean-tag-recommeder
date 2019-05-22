@@ -1,15 +1,23 @@
 # Korean-tag-recommeder  
 
 A prototype of the program recommend the appropriate KOREAN HASHTAGS depending on Instagram body  
-Recommend word hashtags that are popular  
-but not appearing in the text for the text related to '필카', using Word2Vec model.  
+Recommend word hashtags that are popular but not appearing in the text, using Word2Vec model.  
 <br>
 인스타그램에 업로드할 본문을 입력하면, 해당 본문에 적절한 한글 해쉬태그를 추천하는 프로그램입니다.  
-이 프로그램은 prototype으로, '필카'에 관련된 본문에 대한 태그만을 추천합니다.  
-인기가 많으면서도 본문에 등장하지 않는 단어를 태그로 추천합니다.  
+Word2Vec을 이용한 모델로 많이 사용되면서도 본문에 등장하지 않는 단어를 태그로 추천합니다.  
 
-\* '필카' means short for film camera.  
-\* 'Instagram body' means Instagram post without hashtags.  
+※ 'Instagram body' means Instagram post without hashtags.  
+
+
+## 구현 범위 및 개발 방법  
+
+이 프로그램은 prototype으로, '필카'에 관련된 본문에 대한 태그만을 추천합니다.  
+※ '필카' means short for film camera.  
+
+* 개발 언어: Python 3.6  
+* 개발 툴: Anaconda, Jupytal Notebook  
+* 협업 툴: Github, Slack  
+* 사용 라이브러리: KoNLPy, Gensim  
 
 ### example:  
 
@@ -46,11 +54,13 @@ output:
 ## Manual  
 
 ### Environment configuration  
-Run in your terminal (recommended):  
+To use Word2Vec, Gensim must be installed.  
+
+  Run in your terminal (recommended):  
 
     pip install --upgrade gensim
 
-or, alternatively for conda environments:  
+  or, alternatively for conda environments:  
 
     conda install -c conda-forge gensim
 
