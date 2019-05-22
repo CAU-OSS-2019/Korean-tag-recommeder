@@ -1,12 +1,14 @@
 # Korean-tag-recommeder  
 
-A prototype of the program recommend the appropriate KOREAN TAGS depending on Instagram body  
-Recommend word tags that are popular but not appearing in the text for the text related to '필카', using Word2Vec model  
+A prototype of the program recommend the appropriate KOREAN HASHTAGS depending on Instagram body. 
+Recommend word hashtags that are popular but not appearing in the text for the text related to '필카', using Word2Vec model  
 <br>
-인스타그램 본문을 입력하면, 본문에 적절한 한글 태그를 추천하는 프로그램의 prototype입니다.  
-'필카'에 관련된 본문에 대해, 인기가 많으면서도 본문에 등장하지 않는 단어를 태그로 추천합니다.
+인스타그램에 업로드할 본문을 입력하면, 해당 본문에 적절한 한글 해쉬태그를 추천하는 프로그램입니다.
+이 프로그램은 prototype으로, '필카'에 관련된 본문에 대한 태그만을 추천합니다.
+인기가 많으면서도 본문에 등장하지 않는 단어를 태그로 추천합니다.
 
-*'필카' means short for film camera
+\* '필카' means short for film camera.  
+\* 'Instagram body' means Instagram post without hashtags.  
 
 ### example:  
 
@@ -21,10 +23,16 @@ output:
 <br>
 
 ## What Does This Repo Contain  
-* `Dataset/` Training data
-  * `Dataset1/` data for Model 1
-  * `Dataset2/` data for Model 2
-* `Model/`  
+
+* `Dataset1/` data for Model 1
+* `Dataset2/` data for Model 2
+* `Model1_word2vec.model` Model 1 for recommending WORDS similar to the keywords
+* `Model2_word2vec.model` Model 2 for recommending TAGS related to keywords
+* `make_model1.py` Make Model 1
+* `make_model2.py` Make Model 2
+* `model_test.py` Check the results of the model created
+
+
 
 <br>  
 
@@ -41,7 +49,7 @@ or, alternatively for conda environments:
 
 <br>
 
-For preprocessing of data:
+For preprocessing of data, you need to install KoNLPy:
 
     pip install --upgrade pip
     conda -c conda-forge install jpype1
@@ -56,10 +64,3 @@ For preprocessing of data:
 
 For more instructions of preprocess/making model please see WIKI(링크)  
 <br>
-
-
-## Contribute  
-Before Contribution, please read HERE 
-
-
-
