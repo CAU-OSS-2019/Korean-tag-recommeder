@@ -7,12 +7,12 @@ Recommend word hashtags that are popular but not appearing in the text, using Wo
 Word2Vec을 이용한 모델로 많이 사용되면서도 본문에 등장하지 않는 단어를 태그로 추천합니다.  
 
 ※ 'Instagram body' means Instagram post without hashtags.  
-
+<br>
 
 ## 구현 범위 및 개발 방법  
 
 이 프로그램은 prototype으로, '필카'에 관련된 본문에 대한 태그만을 추천합니다.  
-※ '필카' means short for film camera.  
+※ '필카': '필름 카메라'의 준말 Short for film camera  
 
 * 개발 언어: Python 3.6  
 * 개발 툴: Anaconda, Jupytal Notebook  
@@ -31,7 +31,7 @@ output:
 
 <br>
 
-## What Does This Repository Contain  
+# What Does This Repository Contain  
 
 ![Workflow](https://github.com/CAU-OSS-2019/team-project-team18/blob/master/Modeling%20Workflow.jpg)
 
@@ -51,34 +51,38 @@ output:
 
 <br>  
 
-## Manual  
+# Manual  
 
 ### Environment configuration  
 To use Word2Vec, Gensim must be installed.  
 
   Run in your terminal (recommended):  
 
-    pip install --upgrade gensim
+    $ pip install --upgrade gensim
 
   or, alternatively for conda environments:  
 
-    conda install -c conda-forge gensim
+    $ conda install -c conda-forge gensim
 
 <br>
 
 For preprocessing of data, you need to install KoNLPy:
 
-    pip install --upgrade pip
-    conda -c conda-forge install jpype1
+    $ pip install --upgrade pip
+    $ conda -c conda-forge install jpype1
 
-    pip install konlpy
+    $ pip install konlpy
 
 ### Testing
 
-    Testmodel.py #교체예정!!
+    $ Testmodel.py #교체예정!!
 
 <br>
 
-For more instructions of PREPROCESSING/MODELING, please see [WIKI](https://github.com/CAU-OSS-2019/team-project-team18/wiki)
+For more instructions of PREPROCESSING/MODELING, please see [WIKI](https://github.com/CAU-OSS-2019/team-project-team18/wiki)  
+<br>
+
+# Contribution  
+If you want contribute our project, please read [Contribution Guide]() before Contribution.  
 
 <br>
