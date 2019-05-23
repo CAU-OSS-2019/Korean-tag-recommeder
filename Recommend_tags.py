@@ -53,11 +53,10 @@ def nouns(poststr):
 
 	for recomTag in modelResList1:
 		try:	
-			tempStr2 = model2.wv.most_similar(recomTag,topn= 1)
+			tempStr2 = model2.wv.most_similar(recomTag,topn= 5)
 			for kword in tempStr2:
 				modelResList2.append(kword[0])
-				
-			
+
 		except KeyError as e:
 			print(e)
 			continue
@@ -65,6 +64,14 @@ def nouns(poststr):
 	postKwords.extend(modelResList2)
 	print(modelResList1)
 	print(modelResList2)
+
+	for i in range(len(postKwords)):
+		if '#' == postKwords[i][0]:
+			continue
+		else:
+			postKwords[i] = '#' + postKwords[i]
+
+	postKwords = list(set(postKwords))
 	return postKwords
 
 def main():
@@ -82,7 +89,7 @@ def main():
 		
 		resultList = nouns(str.get())
 		for x in resultList:
-    			t.insert(END, x + '  ')
+    			t.insert(END, x + ' ')
 	
 	str = StringVar()
 

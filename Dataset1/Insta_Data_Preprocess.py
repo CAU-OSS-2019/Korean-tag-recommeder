@@ -42,7 +42,7 @@ def main():
             resultList =  okt.nouns(post)
             
             with open('stopwords.txt','rt', encoding='UTF8') as f:
-                b=f.read().split()
+                b = f.read().split()
                 for i in b:
                     if i in resultList:
                         resultList.remove(i)
