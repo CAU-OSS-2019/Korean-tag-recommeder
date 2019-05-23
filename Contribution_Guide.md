@@ -9,9 +9,12 @@
 <br>
 
 ## Pull requests  
+개발은 develop branch에서 진행되고 있습니다.  
 가능하면 먼저 Issue를 생성하여 논의를 거친 후 코드 수정을 진행해 주세요. (권고사항)  
 commit message 및 Pull requests에 Issue 번호를 적어주세요.  
 
+0) Open Issue
 1) Fork한 저장소에서 수정 및 commit 진행  
-2) Open [Pull requests](https://github.com/CAU-OSS-2019/team-project-team18/pulls)  
+2) `$ git push origin develop`
+3) Open [Pull requests](https://github.com/CAU-OSS-2019/team-project-team18/pulls)  
  
