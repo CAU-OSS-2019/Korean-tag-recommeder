@@ -16,7 +16,7 @@ def strip_e(st):
 
 def nouns(poststr):
 	
-	with open('insta_counted.bin', 'rb') as f2:
+	with open('Dataset1/insta_counted.bin', 'rb') as f2:
 		freq_data = pickle.load(f2)
 
 	okt = Okt()
