@@ -53,7 +53,7 @@ def nouns(poststr):
 
 	for recomTag in modelResList1:
 		try:	
-			tempStr2 = model2.wv.most_similar(recomTag,topn= 5)
+			tempStr2 = model2.wv.most_similar(recomTag,topn= 4)
 			for kword in tempStr2:
 				modelResList2.append(kword[0])
 
