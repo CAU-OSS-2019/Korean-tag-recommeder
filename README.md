@@ -54,20 +54,30 @@ For preprocessing of data, you need to install KoNLPy:
 
     $ pip install konlpy
 
+<br>
+
 ### Testing
 
 1) Run `Recommend_tags.py`
 
     $ python Recommend_tags.py
 
-2) GUI appears.
+2) GUI appears.  
+
 ![start](https://github.com/CAU-OSS-2019/team-project-team18/blob/master/Readme_image/start.JPG)  
 
-3) Write down your post on. Press `Process`.
+3) Write down your post on. Press `Process`.  
+
 ![write](https://github.com/CAU-OSS-2019/team-project-team18/blob/master/Readme_image/write_query.JPG)  
 
-4) Check HASHTAGS RECOMMENDED!
-![result](https://github.com/CAU-OSS-2019/team-project-team18/blob/master/Readme_image/result.JPG)
+4) Check HASHTAGS RECOMMENDED!  
+
+![result](https://github.com/CAU-OSS-2019/team-project-team18/blob/master/Readme_image/result.JPG)  
+
+* If you don't want to remove results, uncheck "auto remove"  
+
+![check](https://github.com/CAU-OSS-2019/team-project-team18/blob/master/Readme_image/autocheck.JPG)  
+
 <br>
 
 For more instructions of PREPROCESSING/MODELING, please read [WIKI](https://github.com/CAU-OSS-2019/team-project-team18/wiki)  
