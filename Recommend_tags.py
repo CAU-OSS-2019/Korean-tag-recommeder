@@ -1,6 +1,7 @@
 from tkinter import *
-from tkinter import ttk
+from tkinter import ttk, BooleanVar
 import tkinter as tk
+from tkinter import font
 from tkinter import messagebox
 from konlpy import tag
 from konlpy.tag import Okt
@@ -14,8 +15,8 @@ def strip_e(st):
 	RE_EMOJI = re.compile('[\U00010000-\U0010ffff]', flags=re.UNICODE)
 	return RE_EMOJI.sub(r'', st)
 
+
 def nouns(poststr):
-	
 	with open('Dataset1/insta_counted.bin', 'rb') as f2:
 		freq_data = pickle.load(f2)
 
@@ -40,7 +41,6 @@ def nouns(poststr):
 	model1 = gensim.models.Word2Vec.load(modelDr1)
 	model2 = gensim.models.Word2Vec.load(modelDr2)
 
-	
 	for kword in postKwords:
 		try:
 			tempStr = model1.wv.most_similar(kword,topn= 6)
@@ -53,7 +53,7 @@ def nouns(poststr):
 
 	for recomTag in modelResList1:
 		try:	
-			tempStr2 = model2.wv.most_similar(recomTag,topn= 5)
+			tempStr2 = model2.wv.most_similar(recomTag,topn= 4)
 			for kword in tempStr2:
 				modelResList2.append(kword[0])
 
@@ -74,6 +74,7 @@ def nouns(poststr):
 	postKwords = list(set(postKwords))
 	return postKwords
 
+
 def main():
 	
 	resultList = []
@@ -83,22 +84,49 @@ def main():
 	window.geometry("640x480+100+100")
 	window.resizable(False, False)
 
-	#poststr =' '
+	IsCheck = True
+	def checkclick(IsCheck):
+		'''	if IsCheck:
+        IsCheck = False
+    else: IsCheck = True
+    return IsCheck'''
+
 
 	def click():
-		
+		if chkVal.get():
+			t.delete('1.0', END)
 		resultList = nouns(str.get())
 		for x in resultList:
-    			t.insert(END, x + ' ')
+			t.insert(END, x + ' ')
+
+
 	
 	str = StringVar()
 
-	textbox = ttk.Entry(window, width=67, textvariable=str)
-	textbox.place(x=50, y=50)
-	t = Text(window,height=3)
-	t.place(x=50, y=300)
-	action=ttk.Button(window, text="process", command=click)
-	action.place(x=300, y=100)
+	font = tk.font.Font(size=20, slant="italic")
+	title = tk.Label(window, text="Instagram ###", font=font)
+	title.place(x=250, y=50)
+
+	y1 = int(180)
+	label1 = tk.Label(window, text="문장을 입력하세요")
+	label1.place(x=50, y=y1-25)
+	textbox = ttk.Entry(window, width=60, textvariable=str)
+	textbox.place(x=50, y=y1)
+
+	action = ttk.Button(window, text="process", command=click)
+	action.place(x=500, y=y1-2)
+
+	y2 = 300
+	label2 = tk.Label(window, text="추천 해쉬태그:")
+	label2.place(x=50, y=y2-25)
+	t = Text(window,height=3, width=77)
+	t.place(x=50, y=y2)
+
+	chkVal = tk.IntVar()
+	chkVal.set(True)
+	print()
+	checkact = ttk.Checkbutton(window, text="auto remove", var=chkVal)
+	checkact.place(x=500, y=y2-25)
 
 	window.mainloop()
 	
