@@ -86,7 +86,7 @@ def main():
 	#poststr =' '
 
 	def click():
-		
+		t.delete('1.0', END)
 		resultList = nouns(str.get())
 		for x in resultList:
     			t.insert(END, x + ' ')
