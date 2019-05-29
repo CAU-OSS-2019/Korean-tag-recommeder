@@ -76,7 +76,7 @@ For preprocessing of data, you need to install KoNLPy:
 
 * If you don't want to remove results, uncheck "auto remove"  
 
-![check](https://github.com/CAU-OSS-2019/team-project-team18/blob/master/Readme_image/autocheck.JPG)  
+![check](https://github.com/CAU-OSS-2019/team-project-team18/blob/master/Readme_image/autocheck.jpg)  
 
 <br>
 
