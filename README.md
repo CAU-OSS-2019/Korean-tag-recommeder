@@ -6,7 +6,7 @@ Recommend word hashtags that are popular but not appearing in the post, using Wo
 인스타그램에 업로드할 본문을 입력하면, 해당 본문에 적절한 한글 해쉬태그를 추천하는 프로그램입니다.  
 Word2Vec을 이용한 모델로 많이 사용되면서도 본문에 등장하지 않는 단어를 태그로 추천합니다.  
 
-※ 'Instagram body' means Instagram post without hashtags.  
+※ 'Instagram body' means Instagram post without hashtags and must include two or more nouns..  
 <br>
 
 ## 구현 범위 및 개발 방법  
