@@ -97,8 +97,16 @@ def main():
 		if chkVal.get():
 			t.delete('1.0', END)
 		resultList = nouns(str.get())
-		for x in resultList:
-			t.insert(END, x + ' ')
+
+		if resultList:
+			for x in resultList:
+				t.insert(END, x + ' ')
+		else:
+			messagebox.showwarning(
+				title="Tags 추천",
+				message="추천 해쉬태그가 없습니다."
+			)
+
 
 
 	
