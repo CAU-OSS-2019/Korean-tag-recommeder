@@ -104,7 +104,7 @@ def main():
 		else:
 			messagebox.showwarning(
 				title="Tags 추천",
-				message="추천 해쉬태그가 없습니다."
+				message="2개 이상의 명사를 포함한 글을 입력해주세요."
 			)
 
 
