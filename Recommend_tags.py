@@ -32,9 +32,10 @@ def nouns(poststr):
 	postNouns.append(poststr)
 	loop = 0
 
-	for word in postNouns :
-		count_list = Counter(word)
-		postKwords.extend(keyword_counted.search_key(count_list, freq_data, loop))
+	for word in postNouns:
+		if word:
+			count_list = Counter(word)
+			postKwords.extend(keyword_counted.search_key(count_list, freq_data, loop))
 
 	modelDr1 = 'Model1_word2vec.model'
 	modelDr2 = 'Model2_word2vec.model'
