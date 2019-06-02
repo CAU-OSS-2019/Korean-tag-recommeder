@@ -98,7 +98,7 @@ def main():
 			t.delete('1.0', END)
 		resultList = nouns(str.get())
 
-		if resultList:
+		if len(resultList)>=2:
 			for x in resultList:
 				t.insert(END, x + ' ')
 		else:
