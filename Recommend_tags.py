@@ -32,9 +32,10 @@ def nouns(poststr):
 	postNouns.append(poststr)
 	loop = 0
 
-	for word in postNouns :
-		count_list = Counter(word)
-		postKwords.extend(keyword_counted.search_key(count_list, freq_data, loop))
+	for word in postNouns:
+		if word:
+			count_list = Counter(word)
+			postKwords.extend(keyword_counted.search_key(count_list, freq_data, loop))
 
 	modelDr1 = 'Model1_word2vec.model'
 	modelDr2 = 'Model2_word2vec.model'
@@ -96,8 +97,16 @@ def main():
 		if chkVal.get():
 			t.delete('1.0', END)
 		resultList = nouns(str.get())
-		for x in resultList:
-			t.insert(END, x + ' ')
+
+		if len(resultList)>=2:
+			for x in resultList:
+				t.insert(END, x + ' ')
+		else:
+			messagebox.showwarning(
+				title="Tags 추천",
+				message="2개 이상의 명사를 포함한 글을 입력해주세요."
+			)
+
 
 
 	
