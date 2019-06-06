@@ -9,6 +9,7 @@ from collections import Counter
 import pickle
 import keyword_counted
 import gensim
+import threading
 
 
 def strip_e(st):
@@ -20,7 +21,6 @@ def nouns(poststr):
 	with open('Dataset1/insta_counted.bin', 'rb') as f2:
 		freq_data = pickle.load(f2)
 
-	okt = Okt()
 	postNouns = []
 	modelResList1 = []
 	modelResList2 = []
@@ -78,6 +78,9 @@ def nouns(poststr):
 
 def main():
 	
+	global okt
+
+	okt = Okt()
 	resultList = []
 	
 	window=tk.Tk()
@@ -108,6 +111,11 @@ def main():
 			)
 
 
+	def initOktNouns():
+		okt.nouns("가")
+		action.config(text="process", state=NORMAL)
+
+
 
 	
 	str = StringVar()
@@ -122,7 +130,7 @@ def main():
 	textbox = ttk.Entry(window, width=60, textvariable=str)
 	textbox.place(x=50, y=y1)
 
-	action = ttk.Button(window, text="process", command=click)
+	action = ttk.Button(window, text="loading...", command=click, state=DISABLED)
 	action.place(x=500, y=y1-2)
 
 	y2 = 300
@@ -136,6 +144,10 @@ def main():
 	print()
 	checkact = ttk.Checkbutton(window, text="auto remove", var=chkVal)
 	checkact.place(x=500, y=y2-25)
+
+	t1 = threading.Thread(target=initOktNouns)
+	t1.daemon = True
+	t1.start()
 
 	window.mainloop()
 	
