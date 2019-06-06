@@ -3,6 +3,7 @@ from tkinter import ttk, BooleanVar
 import tkinter as tk
 from tkinter import font
 from tkinter import messagebox
+from tkinter.scrolledtext import ScrolledText
 from konlpy import tag
 from konlpy.tag import Okt
 from collections import Counter
@@ -99,7 +100,7 @@ def main():
 	def click():
 		if chkVal.get():
 			t.delete('1.0', END)
-		resultList = nouns(str.get())
+		resultList = nouns(textbox.get('1.0', END))
 
 		if len(resultList)>=2:
 			for x in resultList:
@@ -117,17 +118,15 @@ def main():
 
 
 
-	
-	str = StringVar()
 
 	font = tk.font.Font(size=20, slant="italic")
 	title = tk.Label(window, text="Instagram ###", font=font)
 	title.place(x=250, y=50)
 
 	y1 = int(180)
-	label1 = tk.Label(window, text="문장을 입력하세요")
+	label1 = tk.Label(window, text="본문을 입력하세요")
 	label1.place(x=50, y=y1-25)
-	textbox = ttk.Entry(window, width=60, textvariable=str)
+	textbox = ScrolledText(window, height=6, width=60)
 	textbox.place(x=50, y=y1)
 
 	action = ttk.Button(window, text="loading...", command=click, state=DISABLED)
