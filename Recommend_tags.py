@@ -132,7 +132,7 @@ def main():
 	action = ttk.Button(window, text="loading...", command=click, state=DISABLED)
 	action.place(x=500, y=y1-2)
 
-	y2 = 300
+	y2 = 340
 	label2 = tk.Label(window, text="추천 해쉬태그:")
 	label2.place(x=50, y=y2-25)
 	t = Text(window,height=3, width=77)
