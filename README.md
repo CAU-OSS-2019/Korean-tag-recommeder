@@ -14,7 +14,7 @@ Word2Vec을 이용한 모델로 많이 사용되면서도 본문에 등장하지
 이 프로그램은 prototype으로, '필카'에 관련된 2개 이상의 명사를 가진 본문에 대한 태그만을 추천합니다.  
 ※ '필카': '필름 카메라'의 준말 Short for film camera  
 
-* 개발 언어: Python 3.6  
+* 개발 언어: Python 3.6 (Anaconda)  
 * 개발 툴: Anaconda, Jupytal Notebook, Pycharm  
 * 협업 툴: Github, Slack  
 * 사용 라이브러리: KoNLPy, Gensim  
@@ -49,10 +49,27 @@ To use Word2Vec, Gensim must be installed.
 
 For preprocessing of data, you need to install KoNLPy:
 
+First, Download [JPype1 (>=0.5.7)](https://www.lfd.uci.edu/~gohlke/pythonlibs/#jpype)  
+
+  Run in your terminal  
+  
+    $ pip install --upgrade pip  
+    $ pip install JPype1-0.5.7-cp27-none-win_amd64.whl  
+    
+    $ pip install konlpy  
+
+<br>
+
+or, alternatively for conda environments:  
+(Don't need to download JPype1)
+
     $ pip install --upgrade pip
     $ conda -c conda-forge install jpype1
-
     $ pip install konlpy
+
+<br>
+
+If you need help installing KoNLPy, please read [WIKI](https://github.com/CAU-OSS-2019/team-project-team18/wiki/Dataset1-%EC%A0%9C%EC%9E%91-1.-%ED%95%9C%EA%B5%AD%EC%96%B4-%EC%9C%84%ED%82%A4%ED%94%BC%EB%94%94%EC%95%84#konlpy-%EC%84%A4%EC%B9%98) or [KoNLPy ](https://konlpy-ko.readthedocs.io/ko/v0.4.3/install/#id2).  
 
 <br>
 
