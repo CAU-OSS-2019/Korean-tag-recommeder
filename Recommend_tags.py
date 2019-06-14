@@ -1,4 +1,3 @@
-
 from tkinter import *
 from tkinter import ttk, BooleanVar, font, messagebox
 import tkinter as tk
@@ -28,6 +27,10 @@ def nouns(poststr):
 
 	poststr = strip_e(poststr)
 	poststr = (okt.nouns(poststr))
+
+	if len(poststr) < 2 :
+		return []
+
 	postNouns.append(poststr)
 	loop = 0
 
@@ -92,16 +95,15 @@ def main():
 		if chkVal.get():
 			t.delete('1.0', END)
 		resultList = nouns(str.get())
-
-
-		if len(resultList)>=2:
-			for x in resultList:
-				t.insert(END, x + ' ')
-		else:
+		if len(resultList) < 2 :
 			messagebox.showwarning(
 				title="Tags 추천",
 				message="2개 이상의 명사를 포함한 글을 입력해주세요."
 			)
+		else:
+			for x in resultList:
+				t.insert(END, x + ' ')
+
 
 	######################################
 	label3 = ttk.Label(window)
