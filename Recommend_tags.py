@@ -68,7 +68,7 @@ def nouns(poststr):
 
 	# Kwords의 각 키워드의 처음이 #인지 확인하여, #로 시작하지 않을 시 #를 붙임.
 	sharpedpostKwords = ['#'+ postKword if postKword[0] != '#' else postKword for postKword in postKwords]
-	return sharpedpostKwords
+	return list(set(sharpedpostKwords))
 
 
 def main():
