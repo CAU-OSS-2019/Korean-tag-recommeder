@@ -1,6 +1,8 @@
 from tkinter import *
-from tkinter import ttk, BooleanVar , font, messagebox
+from tkinter import ttk, BooleanVar
 import tkinter as tk
+from tkinter import font
+from tkinter import messagebox
 from tkinter.scrolledtext import ScrolledText
 from konlpy import tag
 from konlpy.tag import Okt
@@ -68,10 +70,14 @@ def nouns(poststr):
 	print(modelResList1)
 	print(modelResList2)
 
-	sharpedpostKwords = ['#'+ postKword if postKword[0] != '#' else postKword for postKword in postKwords]
-	kwordSet = set()
-	kwordSet_add = kwordSet.add
-	return [kword for kword in sharpedpostKwords if not (kword in kwordSet or kwordSet_add(kword))]
+	for i in range(len(postKwords)):
+		if '#' == postKwords[i][0]:
+			continue
+		else:
+			postKwords[i] = '#' + postKwords[i]
+
+	postKwords = list(set(postKwords))
+	return postKwords
 
 
 def main():
