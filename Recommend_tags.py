@@ -10,9 +10,6 @@ import keyword_counted
 import gensim
 import threading
 
-import time
-
-
 def strip_e(st):
 	RE_EMOJI = re.compile('[\U00010000-\U0010ffff]', flags=re.UNICODE)
 	return RE_EMOJI.sub(r'', st)
@@ -98,12 +95,9 @@ def main():
 
 
 	def click():
-		starttime = time.time()
 		if chkVal.get():
 			t.delete('1.0', END)
 		resultList = nouns(textbox.get('1.0', END))
-		endtime = time.time()
-		print(endtime-starttime)
 
 		if len(resultList) < 2 :
 			messagebox.showwarning(
