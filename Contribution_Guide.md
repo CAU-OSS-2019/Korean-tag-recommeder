@@ -14,6 +14,7 @@
 commit message 및 Pull requests에 Issue 번호를 적어주세요.  
 
 0) Open Issue
+ 0-1) Maintainer의 댓글을 확인해주세요 
 1) Fork한 저장소에서 수정 및 commit 진행  
 2) `$ git push origin develop`
 3) Open [Pull requests](https://github.com/CAU-OSS-2019/team-project-team18/pulls)  
