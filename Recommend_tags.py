@@ -82,10 +82,8 @@ def main():
 	
 	window=tk.Tk()
 	window.title("Tags 추천")
-	window.geometry("640x540+100+100")
+	window.geometry("640x480+100+100")
 	window.resizable(False, False)
-
-
 
 	IsCheck = True
 	def checkclick(IsCheck):
@@ -109,21 +107,14 @@ def main():
 				message="2개 이상의 명사를 포함한 글을 입력해주세요."
 			)
 
-	######################################
-	label3 = ttk.Label(window)
-	label3.img = PhotoImage(file='basetemp.gif')
-	label3.pack()
-	label3.config(justify=CENTER)
-	label3.config(image=label3.img)
 
-	######################################
 
 	
 	str = StringVar()
 
 	font = tk.font.Font(size=20, slant="italic")
 	title = tk.Label(window, text="Instagram ###", font=font)
-	title.place(x=230, y=40)
+	title.place(x=250, y=50)
 
 	y1 = int(180)
 	label1 = tk.Label(window, text="문장을 입력하세요")
