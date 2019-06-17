@@ -3,12 +3,14 @@ from tkinter import ttk, BooleanVar
 import tkinter as tk
 from tkinter import font
 from tkinter import messagebox
+from tkinter.scrolledtext import ScrolledText
 from konlpy import tag
 from konlpy.tag import Okt
 from collections import Counter
 import pickle
 import keyword_counted
 import gensim
+import threading
 
 
 def strip_e(st):
@@ -20,7 +22,6 @@ def nouns(poststr):
 	with open('Dataset1/insta_counted.bin', 'rb') as f2:
 		freq_data = pickle.load(f2)
 
-	okt = Okt()
 	postNouns = []
 	modelResList1 = []
 	modelResList2 = []
@@ -78,14 +79,15 @@ def nouns(poststr):
 
 def main():
 	
+	global okt
+
+	okt = Okt()
 	resultList = []
 	
 	window=tk.Tk()
 	window.title("Tags 추천")
-	window.geometry("640x540+100+100")
+	window.geometry("640x480+100+100")
 	window.resizable(False, False)
-
-
 
 	IsCheck = True
 	def checkclick(IsCheck):
@@ -98,7 +100,7 @@ def main():
 	def click():
 		if chkVal.get():
 			t.delete('1.0', END)
-		resultList = nouns(str.get())
+		resultList = nouns(textbox.get('1.0', END))
 
 		if len(resultList)>=2:
 			for x in resultList:
@@ -109,32 +111,28 @@ def main():
 				message="2개 이상의 명사를 포함한 글을 입력해주세요."
 			)
 
-	######################################
-	label3 = ttk.Label(window)
-	label3.img = PhotoImage(file='basetemp.gif')
-	label3.pack()
-	label3.config(justify=CENTER)
-	label3.config(image=label3.img)
 
-	######################################
+	def initOktNouns():
+		okt.nouns("가")
+		action.config(text="process", state=NORMAL)
 
-	
-	str = StringVar()
+
+
 
 	font = tk.font.Font(size=20, slant="italic")
 	title = tk.Label(window, text="Instagram ###", font=font)
-	title.place(x=230, y=40)
+	title.place(x=250, y=50)
 
 	y1 = int(180)
-	label1 = tk.Label(window, text="문장을 입력하세요")
+	label1 = tk.Label(window, text="본문을 입력하세요")
 	label1.place(x=50, y=y1-25)
-	textbox = ttk.Entry(window, width=60, textvariable=str)
+	textbox = ScrolledText(window, height=6, width=60)
 	textbox.place(x=50, y=y1)
 
-	action = ttk.Button(window, text="process", command=click)
+	action = ttk.Button(window, text="loading...", command=click, state=DISABLED)
 	action.place(x=500, y=y1-2)
 
-	y2 = 300
+	y2 = 340
 	label2 = tk.Label(window, text="추천 해쉬태그:")
 	label2.place(x=50, y=y2-25)
 	t = Text(window,height=3, width=77)
@@ -145,6 +143,10 @@ def main():
 	print()
 	checkact = ttk.Checkbutton(window, text="auto remove", var=chkVal)
 	checkact.place(x=500, y=y2-25)
+
+	t1 = threading.Thread(target=initOktNouns)
+	t1.daemon = True
+	t1.start()
 
 	window.mainloop()
 	
