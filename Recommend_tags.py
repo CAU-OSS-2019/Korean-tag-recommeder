@@ -112,9 +112,16 @@ def main():
 			)
 
 
+	def click2():
+		window.clipboard_clear()
+		window.clipboard_append(t.get('1.0', END))
+		window.update()
+
+
 	def initOktNouns():
 		okt.nouns("가")
 		action.config(text="process", state=NORMAL)
+		action2.config(text="클립보드로 복사", state=NORMAL)
 
 
 
@@ -137,6 +144,10 @@ def main():
 	label2.place(x=50, y=y2-25)
 	t = Text(window,height=3, width=77)
 	t.place(x=50, y=y2)
+
+	window.update()
+	action2 = ttk.Button(window, text="loading...", command=click2, state=DISABLED)
+	action2.place(x=50, y=y2+t.winfo_height()+2)
 
 	chkVal = tk.IntVar()
 	chkVal.set(True)
