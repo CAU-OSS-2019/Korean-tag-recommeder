@@ -14,6 +14,11 @@ import threading
 import webbrowser
 
 
+def open_instagram():
+	url = 'https://www.instagram.com'
+	webbrowser.open(url)
+
+
 def strip_e(st):
 	RE_EMOJI = re.compile('[\U00010000-\U0010ffff]', flags=re.UNICODE)
 	return RE_EMOJI.sub(r'', st)
@@ -81,7 +86,7 @@ def nouns(poststr):
 def main():
 	global okt
 	okt = Okt()
-
+	
 	resultList = []
 	
 	window=tk.Tk()
