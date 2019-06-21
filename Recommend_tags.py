@@ -11,6 +11,7 @@ import pickle
 import keyword_counted
 import gensim
 import threading
+import webbrowser
 
 
 def strip_e(st):
@@ -78,10 +79,9 @@ def nouns(poststr):
 
 
 def main():
-	
 	global okt
-
 	okt = Okt()
+
 	resultList = []
 	
 	window=tk.Tk()
@@ -111,14 +111,18 @@ def main():
 				message="2개 이상의 명사를 포함한 글을 입력해주세요."
 			)
 
-
 	def initOktNouns():
 		okt.nouns("가")
 		action.config(text="process", state=NORMAL)
 
+	# background
+	label3 = ttk.Label(window)
+	label3.img = PhotoImage(file='basetemp.gif')
+	label3.pack()
+	label3.config(justify=CENTER)
+	label3.config(image=label3.img)
 
-
-
+	# UI
 	font = tk.font.Font(size=20, slant="italic")
 	title = tk.Label(window, text="Instagram ###", font=font)
 	title.place(x=250, y=50)
@@ -137,6 +141,12 @@ def main():
 	label2.place(x=50, y=y2-25)
 	t = Text(window,height=3, width=77)
 	t.place(x=50, y=y2)
+
+	btn = tk.Button(window, compound=TOP, command=open_instagram, height = 91, width = 91)
+	btn.img = PhotoImage(file='insta.gif')
+	btn.pack()
+	btn.config(image=btn.img)
+	btn.place(x=40, y=40)
 
 	chkVal = tk.IntVar()
 	chkVal.set(True)
