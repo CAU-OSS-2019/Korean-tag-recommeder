@@ -9,7 +9,11 @@ from collections import Counter
 import pickle
 import keyword_counted
 import gensim
+import webbrowser
 
+def open_instagram():
+	url = 'https://www.instagram.com'
+	webbrowser.open(url)
 
 def strip_e(st):
 	RE_EMOJI = re.compile('[\U00010000-\U0010ffff]', flags=re.UNICODE)
@@ -77,7 +81,7 @@ def nouns(poststr):
 
 
 def main():
-	
+	open_instagram()
 	resultList = []
 	
 	window=tk.Tk()
