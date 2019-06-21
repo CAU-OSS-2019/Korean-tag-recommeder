@@ -13,9 +13,6 @@ import gensim
 import threading
 import webbrowser
 
-def open_instagram():
-	url = 'https://www.instagram.com'
-	webbrowser.open(url)
 
 def strip_e(st):
 	RE_EMOJI = re.compile('[\U00010000-\U0010ffff]', flags=re.UNICODE)
@@ -89,10 +86,8 @@ def main():
 	
 	window=tk.Tk()
 	window.title("Tags 추천")
-	window.geometry("640x540+100+100")
+	window.geometry("640x480+100+100")
 	window.resizable(False, False)
-
-
 
 	IsCheck = True
 	def checkclick(IsCheck):
@@ -130,7 +125,7 @@ def main():
 	# UI
 	font = tk.font.Font(size=20, slant="italic")
 	title = tk.Label(window, text="Instagram ###", font=font)
-	title.place(x=230, y=40)
+	title.place(x=250, y=50)
 
 	y1 = int(180)
 	label1 = tk.Label(window, text="본문을 입력하세요")
@@ -147,7 +142,6 @@ def main():
 	t = Text(window,height=3, width=77)
 	t.place(x=50, y=y2)
 
-	
 	btn = tk.Button(window, compound=TOP, command=open_instagram, height = 91, width = 91)
 	btn.img = PhotoImage(file='insta.gif')
 	btn.pack()
