@@ -81,7 +81,6 @@ def nouns(poststr):
 
 
 def main():
-	open_instagram()
 	resultList = []
 	
 	window=tk.Tk()
@@ -143,6 +142,16 @@ def main():
 	label2.place(x=50, y=y2-25)
 	t = Text(window,height=3, width=77)
 	t.place(x=50, y=y2)
+
+	
+	btn = tk.Button(window, compound=TOP, command=open_instagram, height = 91, width = 91)
+	btn.img = PhotoImage(file='insta.gif')
+	btn.pack()
+	btn.config(image=btn.img)
+	btn.place(x=40, y=40)
+
+	
+	
 
 	chkVal = tk.IntVar()
 	chkVal.set(True)
