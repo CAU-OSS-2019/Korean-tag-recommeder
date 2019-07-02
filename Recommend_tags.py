@@ -18,7 +18,6 @@ def open_instagram():
 	url = 'https://www.instagram.com'
 	webbrowser.open(url)
 
-
 def strip_e(st):
 	RE_EMOJI = re.compile('[\U00010000-\U0010ffff]', flags=re.UNICODE)
 	return RE_EMOJI.sub(r'', st)
@@ -36,6 +35,10 @@ def nouns(poststr):
 
 	poststr = strip_e(poststr)
 	poststr = (okt.nouns(poststr))
+
+	if len(poststr) < 2 :
+		return []
+
 	postNouns.append(poststr)
 	loop = 0
 
@@ -107,14 +110,15 @@ def main():
 			t.delete('1.0', END)
 		resultList = nouns(textbox.get('1.0', END))
 
-		if len(resultList)>=2:
-			for x in resultList:
-				t.insert(END, x + ' ')
-		else:
+		if len(resultList) < 2 :
 			messagebox.showwarning(
 				title="Tags 추천",
 				message="2개 이상의 명사를 포함한 글을 입력해주세요."
 			)
+		else:
+			for x in resultList:
+				t.insert(END, x + ' ')
+
 
 	def initOktNouns():
 		okt.nouns("가")
