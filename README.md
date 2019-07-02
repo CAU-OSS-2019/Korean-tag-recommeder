@@ -120,7 +120,7 @@ For more instructions of PREPROCESSING/MODELING, please read [WIKI](https://gith
 * `Model2_word2vec.model` Model 2 for recommending TAGS related to keywords  
 * `make_model1.py` Make Model 1  
 * `make_model2.py` Make Model 2  
-* `model_test.py` Check the results of the model created  
+* `Recommend_tags.py` Check the results of the model created  
 
 <br>  
 
