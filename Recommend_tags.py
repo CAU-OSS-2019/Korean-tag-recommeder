@@ -11,7 +11,12 @@ import pickle
 import keyword_counted
 import gensim
 import threading
+import webbrowser
 
+
+def open_instagram():
+	url = 'https://www.instagram.com'
+	webbrowser.open(url)
 
 def strip_e(st):
 	RE_EMOJI = re.compile('[\U00010000-\U0010ffff]', flags=re.UNICODE)
@@ -30,6 +35,10 @@ def nouns(poststr):
 
 	poststr = strip_e(poststr)
 	poststr = (okt.nouns(poststr))
+
+	if len(poststr) < 2 :
+		return []
+
 	postNouns.append(poststr)
 	loop = 0
 
@@ -78,10 +87,9 @@ def nouns(poststr):
 
 
 def main():
-	
 	global okt
-
 	okt = Okt()
+	
 	resultList = []
 	
 	window=tk.Tk()
@@ -102,14 +110,14 @@ def main():
 			t.delete('1.0', END)
 		resultList = nouns(textbox.get('1.0', END))
 
-		if len(resultList)>=2:
-			for x in resultList:
-				t.insert(END, x + ' ')
-		else:
+		if len(resultList) < 2 :
 			messagebox.showwarning(
 				title="Tags 추천",
 				message="2개 이상의 명사를 포함한 글을 입력해주세요."
 			)
+		else:
+			for x in resultList:
+				t.insert(END, x + ' ')
 
 
 	def click2():
@@ -123,9 +131,14 @@ def main():
 		action.config(text="process", state=NORMAL)
 		action2.config(text="클립보드로 복사", state=NORMAL)
 
+	# background
+	label3 = ttk.Label(window)
+	label3.img = PhotoImage(file='basetemp.gif')
+	label3.pack()
+	label3.config(justify=CENTER)
+	label3.config(image=label3.img)
 
-
-
+	# UI
 	font = tk.font.Font(size=20, slant="italic")
 	title = tk.Label(window, text="Instagram ###", font=font)
 	title.place(x=250, y=50)
@@ -148,6 +161,12 @@ def main():
 	window.update()
 	action2 = ttk.Button(window, text="loading...", command=click2, state=DISABLED)
 	action2.place(x=50, y=y2+t.winfo_height()+2)
+
+	btn = tk.Button(window, compound=TOP, command=open_instagram, height = 91, width = 91)
+	btn.img = PhotoImage(file='insta.gif')
+	btn.pack()
+	btn.config(image=btn.img)
+	btn.place(x=40, y=40)
 
 	chkVal = tk.IntVar()
 	chkVal.set(True)
