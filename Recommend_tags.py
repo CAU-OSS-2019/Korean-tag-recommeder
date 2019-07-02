@@ -120,9 +120,16 @@ def main():
 				t.insert(END, x + ' ')
 
 
+	def click2():
+		window.clipboard_clear()
+		window.clipboard_append(t.get('1.0', END))
+		window.update()
+
+
 	def initOktNouns():
 		okt.nouns("가")
 		action.config(text="process", state=NORMAL)
+		action2.config(text="클립보드로 복사", state=NORMAL)
 
 	# background
 	label3 = ttk.Label(window)
@@ -150,6 +157,10 @@ def main():
 	label2.place(x=50, y=y2-25)
 	t = Text(window,height=3, width=77)
 	t.place(x=50, y=y2)
+
+	window.update()
+	action2 = ttk.Button(window, text="loading...", command=click2, state=DISABLED)
+	action2.place(x=50, y=y2+t.winfo_height()+2)
 
 	btn = tk.Button(window, compound=TOP, command=open_instagram, height = 91, width = 91)
 	btn.img = PhotoImage(file='insta.gif')
