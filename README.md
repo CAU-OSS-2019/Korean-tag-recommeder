@@ -73,27 +73,33 @@ If you need help installing KoNLPy, please read [WIKI](https://github.com/CAU-OS
 
 <br>
 
-### Testing
+### Run  
+<br>
 
-1) Run `Recommend_tags.py`
+<img src="/Readme_image/start.JPG" width="47%" height="47%"><img src="/Readme_image/all.jpg" width="47%" height="47%">  
 
-    $ python Recommend_tags.py
+① Click this for hashtags after write Instagram body  
+② Copy recommended hashtags  
+③ If you don't want to remove results, uncheck this checkbox  
+④ Link to Instagram page  
+
+<br>
+
+1) Run `Recommend_tags.py`  
+
+    $ python Recommend_tags.py  
 
 2) GUI appears.  
 
-![start](https://github.com/CAU-OSS-2019/team-project-team18/blob/master/Readme_image/start.JPG)  
+<img src="/Readme_image/start.JPG" width="80%" height="80%">  
 
 3) Write down your post on. Press `Process`.  
 
-![write](https://github.com/CAU-OSS-2019/team-project-team18/blob/master/Readme_image/write_query.JPG)  
+<img src="/Readme_image/write_query.JPG" width="80%" height="80%">  
 
 4) Check HASHTAGS RECOMMENDED!  
 
-![result](https://github.com/CAU-OSS-2019/team-project-team18/blob/master/Readme_image/result.JPG)  
-
-* If you don't want to remove results, uncheck "auto remove"  
-
-![check](https://github.com/CAU-OSS-2019/team-project-team18/blob/master/Readme_image/autocheck.jpg)  
+<img src="/Readme_image/result.JPG" width="80%" height="80%">  
 
 <br>
 
