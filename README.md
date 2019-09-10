@@ -14,10 +14,10 @@ Word2Vec을 이용한 모델로 많이 사용되면서도 본문에 등장하지
 이 프로그램은 prototype으로, '필카'에 관련된 2개 이상의 명사를 가진 본문에 대한 태그만을 추천합니다.  
 ※ '필카': '필름 카메라'의 준말 Short for film camera  
 
-* 개발 언어: Python 3.6 (Anaconda)  
-* 개발 툴: Anaconda, Jupytal Notebook, Pycharm  
-* 협업 툴: Github, Slack  
-* 사용 라이브러리: KoNLPy, Gensim  
+* Programming Launguage: Python 3.6 (Anaconda)  
+* Development Tool: Anaconda, Jupytal Notebook, Pycharm  
+* Source Control & Co-working: Github, Slack  
+* Library: KoNLPy, Gensim  
 
 ### example:  
 
@@ -76,30 +76,14 @@ If you need help installing KoNLPy, please read [WIKI](https://github.com/CAU-OS
 ### Run  
 <br>
 
+To use GUI, run `Recommend_tags.py` first.  
+
 <img src="/Readme_image/start.JPG" width="47%" height="47%"><img src="/Readme_image/all.jpg" width="47%" height="47%">  
 
 ① Click this for hashtags after write Instagram body  
 ② Copy recommended hashtags  
 ③ If you don't want to remove results, uncheck this checkbox  
 ④ Link to Instagram page  
-
-<br>
-
-1) Run `Recommend_tags.py`  
-
-    $ python Recommend_tags.py  
-
-2) GUI appears.  
-
-<img src="/Readme_image/start.JPG" width="80%" height="80%">  
-
-3) Write down your post on. Press `Process`.  
-
-<img src="/Readme_image/write_query.JPG" width="80%" height="80%">  
-
-4) Check HASHTAGS RECOMMENDED!  
-
-<img src="/Readme_image/result.JPG" width="80%" height="80%">  
 
 <br>
 
